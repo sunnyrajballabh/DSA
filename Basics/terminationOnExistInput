@@ -1,0 +1,17 @@
+using System;
+using System.Linq;
+using System.Collections.Generic;
+namespace InputReader{
+    class ConsoleInputRead{
+        static void Main(){
+            Console.WriteLine("Write Exist to stop");
+            string input;
+            do{
+                input=Console.ReadLine();
+                if(!string.Equals(input, "Exist", StringComparison.OrdinalIgnoreCase))
+                    Console.WriteLine(input);
+            }while(!string.Equals(input,"Exist", StringComparison.OrdinalIgnoreCase));
+            Console.WriteLine("Terminated");
+        }
+    }
+}
