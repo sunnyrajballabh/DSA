@@ -1,0 +1,30 @@
+using System;
+using System.Linq;
+using System.Collections.Generic;
+namespace removeshort{
+    class RemoveShortNames{
+        static void Main(){
+            Console.WriteLine("Enter the names");
+            List<string> originals = Console.ReadLine().Split(' ').ToList();
+            Console.WriteLine($"Filtered List: {string.Join(", ", newListOfNames(originals))}");
+            //or 
+            //List<string> names = new List<string>(Console.ReadLine().Split(' '));
+            //List<string> newList = newListOfNames(names);
+            //Console.WriteLine("New List: ");
+            //foreach(var name in newList){
+            //    Console.WriteLine(name);
+            //}
+            
+        }
+        public static List<string> newListOfNames(List<string> name){
+            //for(int i=name.Count-1;i>=0;i--){
+            //    if(name[i].Length<3)
+            //        name.RemoveAt(i);
+            //}
+            //return name;
+            //or
+            return name.Where(n=>n.Length>=3).ToList();
+        }
+        
+    }
+}
