@@ -1,0 +1,24 @@
+using System;
+using System.Linq;
+namespace fistq{
+    class D1{
+      public static void Main(){
+          Console.WriteLine("Inter the numbers");
+          int[] num = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
+          //sumuntilfirstneg(new[] {2,4,-1,7});
+          sumuntilfirstneg(num);
+          
+          
+      }
+      public static void sumuntilfirstneg(int[] arr){
+          int res=0;
+          for(int i=0;i<arr.Length;i++){
+              if(arr[i]<0)
+                  break;
+              else
+                  res+=arr[i];
+          }
+          Console.WriteLine(res);
+      }
+  }
+}
