@@ -1,0 +1,32 @@
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+using System.Collections.Generic;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine ("Enter String");
+        string str=Console.ReadLine();
+        Dictionary<char, int> Frequency = frequency(str);
+        foreach(var pair in Frequency){
+            Console.Write($"{pair.Key}:{pair.Value} ");
+        }
+    }
+    public static Dictionary<char, int> frequency(string str){
+        Dictionary<char, int> freq = new Dictionary<char, int>();
+        for(int i=0;i<str.Length;i++){
+            char word = str[i];
+            if(freq.ContainsKey(word)){
+                freq[word]+=1;
+            }
+            else{
+                freq[word]=1;
+            }
+        }
+        return freq;
+    }
+    
+}
